@@ -21,23 +21,10 @@ recordRoutes.route("/record").get(function (req, res) {
     .toArray(function (err, result) {
       if (err) throw err;
       res.json(result);
-      console.log('serverside record.js posting the 2nd value of array, if undefined theres no 2nd arrray yet', result[2]) // Tämä postaa koko collectionin pituuden lengthillä, nyt taulukon arvon 2
     });
     
 });
-// This trying ot be the random sample demonstration
-recordRoutes.route("/sample").get(function (req, res) {
-  let db_connect = dbo.getDb("Data");
-  db_connect
-    .collection("motds")
-    .aggregate([{ $sample: { size: 1 } }])
-    .toArray(function (err, result) {
-      if (err) throw err;
-      res.json(result);
-      console.log(result) // This should post the sample
-    });
-    
-});
+
 
 // This section will help you get a single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
