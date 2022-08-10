@@ -20,7 +20,7 @@ if (environment === 'test') {
 } else if (environment === 'production') {
   ENVIRONMENT_VARIABLES = {
     'process.env.ENVIRONMENT': JSON.stringify('production'),
-    'process.env.PORT': JSON.stringify('3040'),
+    'process.env.PORT': JSON.stringify('80'),
     'process.env.MONGO_CONNECTION_STRING': JSON.stringify('mongodb+srv://bot:bot@cluster0.x3vrg.mongodb.net/data')
   };
 }
