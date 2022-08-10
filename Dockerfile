@@ -18,6 +18,6 @@ COPY --from=client-build /usr/src/client/build ./client/build
 COPY --from=server-build /usr/src/server/dist .
 RUN ls
 
-EXPOSE 3030
+EXPOSE 80
 
 CMD ["node", "api.bundle.js"]
